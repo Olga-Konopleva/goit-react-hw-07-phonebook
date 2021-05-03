@@ -22,13 +22,13 @@ export const fetchContacts = () => dispatch => {
     .catch(error => dispatch(fetchError(error)));
 };
 
-export const addContact = (name, number) => dispatch => {
-  const contact = { name, number };
-
+export const addContact = payload => dispatch => {
+  // const contact = { ...payload };
+  console.log(payload);
   dispatch(addRequest());
 
   axios
-    .post('/contacts', contact)
+    .post('/contacts', payload)
     .then(({ data }) => dispatch(addSuccess(data)))
     .catch(error => dispatch(addError(error)));
 };

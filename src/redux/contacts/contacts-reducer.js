@@ -8,9 +8,13 @@ import {
   deleteSuccess,
   deleteError,
   filterContacts,
+  fetchRequest,
+  fetchSuccess,
+  fetchError,
 } from './contacts-action';
 
 const itemsReducer = createReducer([], {
+  [fetchSuccess]: (_, { payload }) => payload,
   [addSuccess]: (state, { payload }) => [...state, payload],
   [deleteSuccess]: (state, { payload }) =>
     state.filter(item => item.id !== payload),
@@ -27,6 +31,9 @@ const loading = createReducer(false, {
   [deleteRequest]: () => true,
   [deleteSuccess]: () => false,
   [deleteError]: () => false,
+  [fetchRequest]: () => true,
+  [fetchSuccess]: () => false,
+  [fetchError]: () => false,
 });
 // const itemsReducer = (state = [], { type, payload }) => {
 //   switch (type) {

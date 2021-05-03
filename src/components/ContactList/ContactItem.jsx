@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { deleteContact } from '../../redux/contacts/contacts-action';
+import { deleteContact } from '../../redux/contacts/contacts-operations';
 
 const Button = styled.button`
   background: transparent;

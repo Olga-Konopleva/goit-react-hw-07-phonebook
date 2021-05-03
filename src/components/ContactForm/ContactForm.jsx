@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-// import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contacts/contacts-action';
+import { addContact } from '../../redux/contacts/contacts-operations';
 
 const Form = styled.form`
   display: flex;

@@ -7,10 +7,10 @@ import store from './redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store.store}>
-      <PersistGate loading={null} persistor={store.persistor}>
-        <App />
-      </PersistGate>
+    <Provider store={store}>
+      {/* <PersistGate loading={null} persistor={store.persistor}> */}
+      <App />
+      {/* </PersistGate> */}
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),

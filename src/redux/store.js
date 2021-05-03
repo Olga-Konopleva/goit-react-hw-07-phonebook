@@ -5,7 +5,6 @@ import {
 } from '@reduxjs/toolkit';
 import {
   persistStore,
-  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -26,21 +25,21 @@ const middleware = [
   }),
 ];
 
-const persistConfig = {
-  key: 'contacts',
-  storage,
-  blacklist: ['filter'],
-};
+// const persistConfig = {
+//   key: 'contacts',
+//   storage,
+//   blacklist: ['filter'],
+// };
 
 const store = configureStore({
   reducer: {
-    contacts: persistReducer(persistConfig, contactsReducer),
+    contacts: contactsReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',
 });
 
-const persistor = persistStore(store);
+// const persistor = persistStore(store);
 
 //Pure Redux
 // const rootReducer = combineReducers({
@@ -48,4 +47,4 @@ const persistor = persistStore(store);
 //   });
 // const store = createStore(rootReducer, composeWithDevTools());
 
-export default { store, persistor };
+export default store;

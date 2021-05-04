@@ -1,10 +1,19 @@
 {
-    "contacts": [
-        {
-            
-            "name": "Olga",
-            "number": "0686822657",
-            "id": 1
-        }
-    ]
+  "contacts": [
+    {
+      "name": "Olga",
+      "number": "0686822657",
+      "id": 1
+    },
+    {
+      "name": "Omega",
+      "number": "11111111111",
+      "id": 7
+    },
+    {
+      "name": "ткачьова",
+      "number": "11111111111",
+      "id": 8
+    }
+  ]
 }

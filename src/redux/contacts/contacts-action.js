@@ -12,8 +12,6 @@ export const deleteRequest = createAction('contact/DeleteRequest');
 export const deleteSuccess = createAction('contact/DeleteSuccess');
 export const deleteError = createAction('contact/DeleteError');
 
-// export const deleteContact = createAction('contact/Delete');
-
 export const filterContacts = createAction('contact/Filter');
 
 //Pure Redux

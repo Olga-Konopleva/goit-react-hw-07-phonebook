@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/contacts/contacts-operations';
+import * as contactsSelectors from '../../redux/contacts/contacts-selectors';
 
 const Form = styled.form`
   display: flex;
@@ -28,13 +29,23 @@ const Label = styled.label`
   margin-bottom: 15px;
 `;
 
+// const getContacts = state => state.contacts.items;
+
 const ContactForm = () => {
   const dispatch = useDispatch();
+  const contacts = useSelector(contactsSelectors.getAllContacts);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
+  console.log(contacts);
+
   const handleSubmit = e => {
     e.preventDefault();
+    const unavailableName = contacts.some(contact => contact.name === name);
+    if (unavailableName) {
+      alert(`${name} is already in contacts`);
+      return;
+    }
     dispatch(addContact({ name, number }));
     setName('');
     setNumber('');
